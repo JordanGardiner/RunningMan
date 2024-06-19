@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bid8n5ovls0e3"]
+
+[ext_resource type="Texture2D" uid="uid://du5kk83nam8pw" path="res://Assets/PixelAdventure/Background/Gray.png" id="1_jp3jq"]
+[ext_resource type="Script" path="res://Scripts/home_screen.gd" id="1_ya1i1"]
+[ext_resource type="Texture2D" uid="uid://41ij4yi12l5g" path="res://Assets/running_man_logo.png" id="2_72aab"]
+
+[node name="MainNode" type="Node"]
+script = ExtResource("1_ya1i1")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jp3jq")
+stretch_mode = 1
+
+[node name="Title" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -358.0
+offset_top = -172.0
+offset_right = 358.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_72aab")
+
+[node name="level1" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = 42.0
+offset_right = -36.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+
+[node name="level2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 46.0
+offset_top = 44.0
+offset_right = 278.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 2"
+
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
